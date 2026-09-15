@@ -1,3 +1,8 @@
+from functools import wraps
+import time
+from datetime import datetime
+
+
 data = {}
 #path = "dummy_key_val.txt"
 with open("dummy_key_val.txt", 'r') as f:
@@ -5,15 +10,39 @@ with open("dummy_key_val.txt", 'r') as f:
         key, value = line.split("=", 1)
         data[key.strip()] = value.strip()
 
-def get(key):
-    print(data.get(key))
+def timed(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        start_time = datetime.now()
+        start = time.time()
+        try:
+            res=func(*args, **kwargs)
+            end = time.time()
+            with open("logs.txt", 'a') as f:
+                f.write(f"{func.__name__} started at {start_time} and ran for {end-start}sec\n")
+            return res
 
-def  set(key,value):
+        except Exception as e:
+            
+            with open("logs.txt", 'a') as f:
+                f.write(f"{func.__name__} started at {start_time} and failed due to {type(e).__name__}\n")
+                raise 
+
+    return wrapper
+
+@timed
+def get(key):
+    return (data.get(key))
+
+@timed
+def  set_val(key,value):
     data[key]=value
 
-def delete(key):
+@timed
+def delete_val(key):
     del data[key]
 
+@timed
 def write_back(path):
     with open(path, 'w') as f:
         for key,value in data.items():
@@ -21,7 +50,7 @@ def write_back(path):
             f.write(f"{key}={value}\n")
     
 
-set("username", "zoya")
-get("username")
-
+set_val("username", "hussain")
+print(get("username"))
+delete_val("false_key")
 write_back("dummy_key_val.txt")
