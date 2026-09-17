@@ -4,32 +4,15 @@ from datetime import datetime
 import inspect
 
 data = {}
+
+
+'''  
 #path = "dummy_key_val.txt"
 with open("dummy_key_val.txt", 'r') as f:
     for line in f:
         key, value = line.split("=", 1)
         data[key.strip()] = value.strip()
 '''
-def timed(func):
-    @wraps(func)
-    def wrapper(*args, **kwargs):
-        start_time = datetime.now()
-        start = time.time()
-        try:
-            res=func(*args, **kwargs)
-            end = time.time()
-            with open("logs.txt", 'a') as f:
-                f.write(f"{func.__name__} started at {start_time} and ran for {end-start}sec\n")
-            return res
-
-        except Exception as e:
-            
-            with open("logs.txt", 'a') as f:
-                f.write(f"{func.__name__} started at {start_time} and failed due to {type(e).__name__}\n")
-                raise 
-
-    return wrapper
-    '''
 def timed(func):
     if inspect.isgeneratorfunction(func) == True:
         @wraps(func)
@@ -90,11 +73,10 @@ def delete_val(key):
     del data[key]
 
 @timed
-def write_back(path):
-    with open(path, 'w') as f:
-        for key,value in data.items():
-        
-            f.write(f"{key}={value}\n")
+def write_back(f):
+    for key, value in data.items():
+        f.write(f"{key}={value}\n")
+    
 
 
 @timed
@@ -109,10 +91,31 @@ def print_all():
         #raise KeyError
         break
         
+class FM_for_KV_store:
+    def __init__(self,filename, mode):
+        self.filename = filename
+        self.mode = mode
+        self.file = None
 
-set_val("password", "sonusonu")
-print(get("username"))
-#delete_val("false_key")
-write_back("dummy_key_val.txt")
+    def __enter__(self):
+        self.file = open(self.filename, self.mode)
+        self.file.seek(0) #'a+' starts your read position at EOF, so __enter__'s loop reads nothing. this line is to correct that
+        for line in self.file:
+            key,value = line.split("=", 1)
+            data[key.strip()] = value.strip()
+        return self.file
 
-print_all()
+    def __exit__(self, exc_type, exc_value, exc_traceback):
+        self.file.seek(0)
+        self.file.truncate()
+        write_back(self.file)
+        self.file.close()
+
+with FM_for_KV_store("dummy_key_val.txt", 'a+'):
+
+    set_val("username", "kashish")
+    print(get("username"))
+    #delete_val("false_key")
+   
+
+    print_all()
