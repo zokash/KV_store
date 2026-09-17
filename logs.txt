@@ -27,3 +27,52 @@ write_back started at 2026-09-16 01:45:38.808267 and ran for 0.00025296211242675
 set_val started at 2026-09-16 01:48:42.610986 and ran for 7.152557373046875e-07sec
 get started at 2026-09-16 01:48:42.611195 and ran for 1.1920928955078125e-06sec
 delete_val started at 2026-09-16 01:48:42.611407 and failed due to KeyError
+list_all started at 2026-09-16 02:42:46.418965 and ran for 2.384185791015625e-07sec
+print_all started at 2026-09-16 02:42:46.418951 and ran for 0.0004944801330566406sec
+list_all started at 2026-09-16 02:43:33.017909 and ran for 7.152557373046875e-07sec
+set_val started at 2026-09-17 19:25:44.856085 and ran for 7.152557373046875e-07sec
+get started at 2026-09-17 19:25:44.857079 and ran for 1.430511474609375e-06sec
+write_back started at 2026-09-17 19:25:44.857294 and ran for 0.00017333030700683594sec
+set_val successful! Started at 2026-09-17 19:29:41.069713 and ran for 5.4836273193359375e-06sec
+get successful! Started at 2026-09-17 19:29:41.069959 and ran for 1.1920928955078125e-06sec
+delete_val failed due to KeyError! Started at 2026-09-17 19:29:41.070274 
+set_val successful! Started at 2026-09-17 19:30:23.038810 and ran for 7.152557373046875e-07sec
+get successful! Started at 2026-09-17 19:30:23.039029 and ran for 1.1920928955078125e-06sec
+write_back successful! Started at 2026-09-17 19:30:23.039315 and ran for 0.00021076202392578125sec
+list_all successful! Started at 2026-09-17 19:30:23.039636 and ran for 7.772445678710938e-05sec
+print_all successful! Started at 2026-09-17 19:30:23.039633 and ran for 0.00023674964904785156sec
+set_val successful! Started at 2026-09-17 19:33:51.582895 and ran for 7.152557373046875e-07sec
+get successful! Started at 2026-09-17 19:33:51.583095 and ran for 1.430511474609375e-06sec
+write_back successful! Started at 2026-09-17 19:33:51.583394 and ran for 0.00036334991455078125sec
+list_all not started Started at 2026-09-17 19:33:51.583866 and ran for 0.00039887428283691406sec
+print_all successful! Started at 2026-09-17 19:33:51.583863 and ran for 0.0005705356597900391sec
+set_val successful! Started at 2026-09-17 19:36:08.300365 and ran for 9.5367431640625e-07sec
+get successful! Started at 2026-09-17 19:36:08.300617 and ran for 1.430511474609375e-06sec
+write_back successful! Started at 2026-09-17 19:36:08.300820 and ran for 0.00016450881958007812sec
+list_all successful! Started at 2026-09-17 19:36:08.301087 and ran for 4.744529724121094e-05sec
+print_all successful! Started at 2026-09-17 19:36:08.301085 and ran for 0.00020456314086914062sec
+set_val successful! Started at 2026-09-17 19:38:10.142270 and ran for 1.430511474609375e-06sec
+get successful! Started at 2026-09-17 19:38:10.142537 and ran for 1.9073486328125e-06sec
+write_back successful! Started at 2026-09-17 19:38:10.142808 and ran for 0.00017952919006347656sec
+list_all successful! Started at 2026-09-17 19:38:10.143110 and ran for 0.00010180473327636719sec
+print_all failed due to KeyError! Started at 2026-09-17 19:38:10.143106 
+set_val successful! Started at 2026-09-17 19:39:53.256527 and ran for 9.5367431640625e-07sec
+get successful! Started at 2026-09-17 19:39:53.256727 and ran for 9.5367431640625e-07sec
+write_back successful! Started at 2026-09-17 19:39:53.257104 and ran for 0.00035572052001953125sec
+list_all successful! Started at 2026-09-17 19:39:53.257678 and ran for 5.507469177246094e-05sec
+print_all successful! Started at 2026-09-17 19:39:53.257674 and ran for 0.000186920166015625sec
+set_val successful! Started at 2026-09-17 19:43:45.044992 and ran for 9.5367431640625e-07sec
+get successful! Started at 2026-09-17 19:43:45.045254 and ran for 9.5367431640625e-07sec
+write_back successful! Started at 2026-09-17 19:43:45.045502 and ran for 0.0001919269561767578sec
+list_all successful! Started at 2026-09-17 19:43:45.045880 and ran for 0.00010824203491210938sec
+print_all successful! Started at 2026-09-17 19:43:45.045877 and ran for 0.0002334117889404297sec
+set_val successful! Started at 2026-09-17 19:45:22.233754 and ran for 1.1920928955078125e-06sec
+get successful! Started at 2026-09-17 19:45:22.234012 and ran for 1.430511474609375e-06sec
+write_back successful! Started at 2026-09-17 19:45:22.234348 and ran for 0.0004062652587890625sec
+list_all not started Started at 2026-09-17 19:45:22.234928 and ran for 0.0001201629638671875sec
+print_all successful! Started at 2026-09-17 19:45:22.234923 and ran for 0.00034117698669433594sec
+set_val successful! Started at 2026-09-17 20:03:06.907284 and ran for 9.5367431640625e-07sec
+get successful! Started at 2026-09-17 20:03:06.907587 and ran for 1.1920928955078125e-06sec
+write_back successful! Started at 2026-09-17 20:03:06.907932 and ran for 0.0005052089691162109sec
+list_all incomplete Started at 2026-09-17 20:03:06.908569 and ran for 0.0001361370086669922sec
+print_all successful! Started at 2026-09-17 20:03:06.908566 and ran for 0.0003521442413330078sec
